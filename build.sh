@@ -15,8 +15,8 @@ export BR2_CCACHE_DIR=${HOME}/.buildroot-cache
 
 # configuring ccache
 echo "Using BR2_DL_DIR=${BR2_DL_DIR} and BR2_CCACHE_DIR=${BR2_CCACHE_DIR}"
-make -C buildroot CCACHE_OPTIONS="--max-size=5G" ccache-options
-make -C buildroot CCACHE_OPTIONS="--zero-stats" ccache-options
+ccache --max-size=5G
+ccache --zero-stats
 
 EXTERNAL_REL_BUILDROOT=../base_external
 git submodule init
